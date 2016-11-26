@@ -6,6 +6,10 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{262852C6-CD72-467D-83FE-5EEB1973A190}") = "barriere-frontend", "barriere-frontend\barriere-frontend.jsproj", "{DF65F77F-52A8-42BA-8D43-69AFC9373662}"
 EndProject
 Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Android = Debug|Android
 		Debug|iOS = Debug|iOS

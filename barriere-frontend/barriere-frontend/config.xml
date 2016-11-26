@@ -81,4 +81,6 @@
     <icon src="resources/windows/icon/logo71x71.scale-100.png" width="71" height="71" />
     <icon src="resources/windows/icon/wide310x150.scale-100.png" width="310" height="150" />
   </platform>
+  <plugin name="cordova-plugin-camera" version="2.3.0" />
+  <plugin name="cordova-plugin-compat" version="1.1.0" />
 </widget>
