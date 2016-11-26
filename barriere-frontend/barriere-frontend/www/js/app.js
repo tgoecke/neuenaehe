@@ -50,50 +50,52 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
     })
 
-  .state('app.single', {
-    url: '/playlists/:playlistId',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/playlist.html',
-        controller: 'PlaylistCtrl'
-      }
-    }
-  })
-  .state('app.barriers', {
-      url: '/barriers',
-      view: {
-          'menuContent': {
-              templateUrl: 'templates/barriers.html',
-              controller: 'BarriersCtrl'
-          }
-      }
-  })
-  .state('app.barrier.entry', {
-      url: '/barriers/entry',
-      view: {
-          'menuContent': {
-              templateUrl: 'templates/barrierentry.html',
-              controller: 'BarriersCtrl'
-          }
-      }
-  })
-        .state('app.camera', {
+    .state('app.camera', {
             url: '/camera',
             views: {
                 'menuContent': {
                     templateUrl: 'templates/camera.html'
                 }
             }
-        })
-  .state('app.barrier.retrieve', {
-      url: '/barriers/retrieve',
-      view: {
-          'menuContent': {
-              templateUrl: 'templates/barrierretrieval.html',
-              controller: 'BarriersCtrl'
+    })
+
+      .state('app.playlists', {
+          url: '/playlists',
+          views: {
+              'menuContent': {
+                  templateUrl: 'templates/playlists.html',
+                  controller: 'PlaylistsCtrl'
+              }
           }
-      }
-  });
-  // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+      })
+
+    .state('app.single', {
+        url: '/playlists/:playlistId',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/playlist.html',
+                controller: 'PlaylistCtrl'
+            }
+        }
+    })
+    .state('app.barriers', {
+        url: '/barriers',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/barriers.html',
+                controller: 'BarrierCtrl'
+            }
+        }
+    })
+    .state('app.barrier', {
+        url: 'barrier/:barrierId',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/barrier.html',
+                controller: 'BarriersCtrl'
+            }
+        }
+    });
+    // if none of the above states are matched, use this as the fallback
+    $urlRouterProvider.otherwise('/app/browse');
 });
