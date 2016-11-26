@@ -50,14 +50,14 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
     })
 
-        .state('app.camera', {
+    .state('app.camera', {
             url: '/camera',
             views: {
                 'menuContent': {
                     templateUrl: 'templates/camera.html'
                 }
             }
-        })
+    })
 
       .state('app.playlists', {
           url: '/playlists',
@@ -77,7 +77,25 @@ angular.module('starter', ['ionic', 'starter.controllers'])
                 controller: 'PlaylistCtrl'
             }
         }
+    })
+    .state('app.barriers', {
+        url: '/barriers',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/barriers.html',
+                controller: 'BarrierCtrl'
+            }
+        }
+    })
+    .state('app.barrier', {
+        url: 'barrier/:barrierId',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/barrier.html',
+                controller: 'BarriersCtrl'
+            }
+        }
     });
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/app/playlists');
+    $urlRouterProvider.otherwise('/app/browse');
 });

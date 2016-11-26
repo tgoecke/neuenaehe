@@ -52,5 +52,21 @@ angular.module('starter.controllers', [])
   ];
 })
 
+.controller('BarriersCtrl', function ($scope) {
+    $scope.barriers = [
+        { title: 'Barriere erfassen', id: 'entry' },
+        { title: 'Barriere anzeigen', id: 'retrieve' },
+        { title: 'Hilfe', id: 'requestHelp'}
+    ];
+})
+.controller('CameraCtrl', function ($scope) {
+    $scope.cameras = [
+        {title: 'CameraTitle', id: 1}
+    ];
+})
+
+.controller('BarrierCtrl', function($scope, $stateparam){
+})
+
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 });
