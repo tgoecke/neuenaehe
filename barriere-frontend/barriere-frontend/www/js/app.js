@@ -67,6 +67,33 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         controller: 'PlaylistCtrl'
       }
     }
+  })
+  .state('app.barriers', {
+      url: '/barriers',
+      view: {
+          'menuContent': {
+              templateUrl: 'templates/barriers.html',
+              controller: 'BarriersCtrl'
+          }
+      }
+  })
+  .state('app.barrier.entry', {
+      url: '/barriers/entry',
+      view: {
+          'menuContent': {
+              templateUrl: 'templates/barrierentry.html',
+              controller: 'BarriersCtrl'
+          }
+      }
+  })
+  .state('app.barrier.retrieve', {
+      url: '/barriers/retrieve',
+      view: {
+          'menuContent': {
+              templateUrl: 'templates/barrierretrieval.html',
+              controller: 'BarriersCtrl'
+          }
+      }
   });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/playlists');
