@@ -20,6 +20,7 @@
     "postinstall": "npm run bower && npm run build"
   },
   "cordovaPlugins": [
+    "cordova-plugin-camera",
     "cordova-plugin-device",
     "cordova-plugin-console",
     "cordova-plugin-whitelist",
