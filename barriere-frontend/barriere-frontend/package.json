@@ -21,6 +21,7 @@
   },
   "cordovaPlugins": [
     "cordova-plugin-camera",
+	"cordova-plugin-geolocation",
     "cordova-plugin-device",
     "cordova-plugin-console",
     "cordova-plugin-whitelist",

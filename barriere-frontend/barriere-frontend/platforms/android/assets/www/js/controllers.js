@@ -57,12 +57,13 @@ angular.module('starter.controllers', [])
                 console.log("fail: " + err.code);
             },
             {
-                destinationType: Camera.DestinationType.FILE_URI,
-                sourceType: Camera.PictureSourceType.CAMERA, // Camera.PictureSourceType.PHOTOLIBRARY
+                quality:50,
+                destinationType: Camera.DestinationType.DATA_URL,
+                sourceType: Camera.PictureSourceType.CAMERA,
                 allowEdit: false,
                 encodingType: Camera.EncodingType.JPEG,
-                popoverOptions: CameraPopoverOptions
-                //destinationType: Camera.DestinationType.DATA_URL
+                targetHeight: 100,
+                targetWidth : 100
             }
         );
 
@@ -160,20 +161,6 @@ angular.module('starter.controllers', [])
     };
 })
 
-
-
-
-.controller('PlaylistsCtrl', function ($scope) {
-    $scope.playlists = [
-      { title: 'Reggae', id: 1 },
-      { title: 'Chill', id: 2 },
-      { title: 'Dubstep', id: 3 },
-      { title: 'Indie', id: 4 },
-      { title: 'Rap', id: 5 },
-      { title: 'Cowbell', id: 6 }
-    ];
-})
-
 .controller('BarrierCtrl', function ($scope) {
     $scope.barriers = [
         { title: 'Barriere erfassen', id: 'entry' },
@@ -198,5 +185,4 @@ angular.module('starter.controllers', [])
 .controller('BarrierCtrl', function ($scope, $stateparam) {
 })
 
-.controller('PlaylistCtrl', function ($scope, $stateParams) {
-});
+

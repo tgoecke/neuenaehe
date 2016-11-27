@@ -22,7 +22,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     });
 })
 
-.config(function ($stateProvider, $urlRouterProvider) {
+.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
     $stateProvider
 
       .state('app', {
@@ -32,11 +32,11 @@ angular.module('starter', ['ionic', 'starter.controllers'])
           controller: 'AppCtrl'
       })
 
-    .state('app.search', {
-        url: '/search',
+    .state('app.home', {
+        url: '/home',
         views: {
             'menuContent': {
-                templateUrl: 'templates/search.html'
+                templateUrl: 'templates/home.html'
             }
         }
     })
@@ -52,50 +52,18 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 
     .state('app.camera', {
         url: '/camera',
+        controller: 'CameraCtrl',
         views: {
             'menuContent': {
                 templateUrl: 'templates/camera.html'
             }
         }
-    })
-
-      .state('app.playlists', {
-          url: '/playlists',
-          views: {
-              'menuContent': {
-                  templateUrl: 'templates/playlists.html',
-                  controller: 'PlaylistsCtrl'
-              }
-          }
-      })
-
-    .state('app.single', {
-        url: '/playlists/:playlistId',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/playlist.html',
-                controller: 'PlaylistCtrl'
-            }
-        }
-    })
-    .state('app.barriers', {
-        url: '/barriers',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/barriers.html',
-                controller: 'BarrierCtrl'
-            }
-        }
-    })
-    .state('app.barrier', {
-        url: 'barrier/:barrierId',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/barrier.html',
-                controller: 'BarriersCtrl'
-            }
-        }
     });
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/app/browse');
+    $urlRouterProvider.otherwise('/app/home');
+
+    /* CORS... */
+    /* http://stackoverflow.com/questions/17289195/angularjs-post-data-to-external-rest-api */
+    $httpProvider.defaults.useXDomain = true;
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
 });
